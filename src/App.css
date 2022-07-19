@@ -1,0 +1,230 @@
+.musicplayer .wrapper {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.musicplayer .wrapper i {
+  cursor: pointer;
+}
+.musicplayer .top-bar,
+.musicplayer .range .song-timer,
+.musicplayer .controls,
+.musicplayer .music-list .header,
+.musicplayer .music-list ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.musicplayer .img-area {
+  width: 20%;
+  height: 115px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.musicplayer .img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.musicplayer .song-details {
+  text-align: center;
+}
+.musicplayer .range {
+  width: 100%;
+  cursor: pointer;
+}
+.musicplayer .range .song-timer {
+  margin-top: 2px;
+}
+.musicplayer .song-timer span {
+  font-size: 13px;
+}
+.musicplayer .controls i {
+  font-size: 20px;
+  user-select: none;
+  line-height: 29px;
+}
+.musicplayer .controls i:nth-child(2),
+.controls i:nth-child(4) {
+  font-size: 38px;
+}
+.musicplayer .music-list {
+  top: 7px;
+  left: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.15s ease-out;
+  border-radius: 10px;
+  border: none;
+}
+.musicplayer .header #close {
+  font-size: 22px;
+  cursor: pointer;
+}
+.musicplayer .music-list ul {
+  padding: 15px 17px 15px;
+  height: 74vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.musicplayer .music-list ul::-webkit-scrollbar {
+  width: 0;
+}
+.musicplayer .music-list ul li {
+  list-style: none;
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  padding: 0 11px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 15%);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.musicplayer .music-list ul li:last-child {
+  border-bottom: 0;
+}
+.musicplayer .music-list ul li .row span {
+  font-size: 17px;
+}
+.musicplayer .music-list ul li .row p {
+  opacity: 0.9;
+}
+.musicplayer ul li.playing {
+  pointer-events: none;
+  color: var(--active-color);
+}
+.musicplayer {
+  width: 100%;
+  margin: 0 35px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 15%);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+.musicplayer .music-list ul li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 0 15px;
+}
+.music-list .header {
+  padding: 15px 17px 15px;
+}
+.musicplayer .sliderValue {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  left: 1px;
+}
+.musicplayer .sliderValue span {
+  color: #2c0101;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  bottom: 100%;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
+  font-size: 13px;
+  left: 50%;
+  line-height: 1.3;
+  opacity: 0;
+  padding: calc(10px / 2) calc(calc(10px / 2) * 1.5);
+  pointer-events: none;
+  position: absolute;
+  transform: translate(-50%, 10px) scale(0.8);
+  transform-origin: 50% 100%;
+  transition: transform 0.2s 0.1s ease, opacity 0.2s 0.1s ease;
+  white-space: nowrap;
+  z-index: 2;
+}
+.musicplayer .sliderValue span.show {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+.musicplayer .sliderValue span:after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(255, 255, 255, 0.9);
+  bottom: calc(4px * -1);
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 0;
+  z-index: 2;
+}
+.musicplayer .field .value {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+}
+.musicplayer .field .value.left {
+  left: -20px;
+}
+.musicplayer .field .value.right {
+  right: -46px;
+}
+.musicplayer .range input {
+  outline: none;
+  transition: opacity 0.2s;
+  border-radius: 10px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px #000000;
+  backdrop-filter: blur(5px);
+  outline: none;
+  height: 3px;
+  flex: 1 1 auto;
+  color: inherit;
+  margin-right: 1em;
+  cursor: pointer;
+  appearance: none;
+  padding: 0;
+}
+.musicplayer .range input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  background: #fe6100;
+  cursor: pointer;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1), 0 0 20px 10px rgb(0 0 0 / 15%),
+    inset 0 0 4px 2px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
+  transition: transform 0.1s;
+  cursor: grab;
+  border: 3px solid #fe6100;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.2s ease;
+}
+.musicplayer .range:hover input::-webkit-slider-thumb {
+  opacity: 1;
+  transform: scale(1);
+}
+.musicplayer .musicside {
+  display: flex;
+  flex-direction: column;
+  width: 77%;
+}

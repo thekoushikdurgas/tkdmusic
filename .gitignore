@@ -1,0 +1,31 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+/build
+/buildfiles
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+git add . && git commit -m "8/7/2020" && git push origin main
+git init
+git remote add origin https://github.com/thekoushikdurgas/Portfolio.git
+git remote -v
+git checkout -b build
+git add . && git commit -m "8/7/2020" && git push origin build -f
